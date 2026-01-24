@@ -84,3 +84,10 @@ header {
     border-radius: 50%;
     width: 40rem;
 }
+
+.bg-mission-img {
+    background-image: __________;
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+}
