@@ -74,7 +74,7 @@ header {
     transition: transform 0.3s ease;
 }
 
-/* LESSON 7: HOVERING FOR LOGO */
+
 #logo:hover {
     transform: scale(1.1);
     cursor: pointer;
@@ -89,12 +89,27 @@ header {
     background-size: cover;
      background-position:center ;
      background-repeat: no-repeat; 
-     background-image: url(/images/Untitled\ design.png);
+     background-image: url(/images/home-page/home-page-banner.png);
 }
 
 .mission-bg-img{
     background-size: cover;
      background-position: ;
      background-repeat: no-repeat; 
-     background-image: url(/images/Screenshot\ 2026-02-05\ 185156.png)
+     background-image: url(/images/home-page/our-mission-background.png)
+}
+
+
+.color:hover{
+    color: blue;
+
+    transition: color 0.3s ease;
+}
+.color:hover h5 { 
+    text-decoration: underline;
+    transition: text-decoration 0.3s ease;
+}
+
+.split-bg {
+   background: linear-gradient(to bottom, aliceblue 0%, aliceblue 50%, white 40%, white 50%);
 }
