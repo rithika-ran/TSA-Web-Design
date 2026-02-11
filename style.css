@@ -102,8 +102,8 @@ header {
 
 .color:hover{
     color: blue;
-
-    transition: color 0.3s ease;
+    transform:translateY(-3px) ;
+    transition: color  0.3s ease, transform 0.25s ease;
 }
 .color:hover h5 { 
     text-decoration: underline;
@@ -112,4 +112,13 @@ header {
 
 .split-bg {
    background: linear-gradient(to bottom, aliceblue 0%, aliceblue 50%, white 50%, white 100%);
+}
+
+.video-bg-apply {
+    height: 400px;
+    width: 1264px;
+    background-position: absolute;
+    z-index: 10;
+    object-fit: cover;
+
 }
