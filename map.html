@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bergen County Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        #map { height: 600px; width: 100%; }
+    </style>
+</head>
+<body>
+    <h1>Bergen County, NJ Map</h1>
+    <div id="map"></div>
+
+    <div class="collapse navbar-collapse justify-content-end align-center " id="main-nav">
+                    <ul class="h5 navbar-nav">
+                        <li class="nav-item ">
+                            <a href="index.html" class="nav-link mx-2">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="resources.html" class="nav-link mx-2">Resources</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                             <a href="map.html" class="nav-link mx-2">Map</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="contacts.html" class="nav-link mx-2">Contact Us</a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="apply.html" class="nav-link mx-2">Apply</a>
+                        </li>
+
+                    </ul>
+
+
+                </div>
+
+    <script>
+        
+        var map = L.map('map').setView([40.90, -74.05], 10);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        var bergenBounds = [
+            [41.00, -74.25], [40.95, -74.05], [40.85, -73.95],
+            [40.80, -74.00], [40.75, -74.10], [40.80, -74.25],
+            [40.90, -74.30], [41.00, -74.25]
+        ];
+
+        L.polygon(bergenBounds, {
+            color: 'blue',
+            weight: 3,
+            fillOpacity: 0.2
+        }).addTo(map).bindPopup('Bergen County, NJ');
+
+        L.marker([40.91, -74.07]).addTo(map)
+            .bindPopup('Paramus, Bergen County');
+    </script>
+</body>
+</html>
