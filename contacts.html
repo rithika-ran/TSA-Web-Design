@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
 
 </head>
 
@@ -22,7 +23,9 @@
             <div class="container-xxl">
                 <a href="#home-page" class=" ps-3 navbar-brand">
 
-                    <div id="logo" class=" p-2">BergenHelp</div>
+                     <div id="name" class=" ">
+                         <img src="images/BergenHelpLogo.png" class="rounded-circle mt-0" alt="Bergen Help Logo" style="width: 70px; height: 70px;"> BergenHelp</div>
+
 
                 </a>
                 <!-- toggle button for mobile nav -->
@@ -93,7 +96,7 @@
                     <span class="input-group-text">
                         <i class="bi bi-envelope"></i>
                     </span>
-                    <input type="text" class="form-control" placeholder="e.g. Princess Peach" id="name" required>
+                   <input type="text" class="form-control" placeholder="e.g. Princess Peach" id="name" required>
                     
                     <span class="input-group-text">
                         <span class="tt" data-bs-placement="bottom" title="Enter your name">
@@ -111,7 +114,7 @@
                     <input type="email" class="form-control" placeholder="e.g. peach@example.com" id="email" required>
                     <span class="input-group-text">
                         <span class="tt" data-bs-placement="bottom"
-                            title="Enter am email we can use to get back to you">
+                            title="Enter an email we can use to get back to you">
                             <i class="bi bi-patch-question text-muted"></i>
                         </span>
                         <!-- tooltips -->
@@ -151,30 +154,126 @@
 
 
 
-    <!-- get updates -->
-    <section class="bg-light">
+      <!-- get updates -->
+    <section class="bg-light py-4 ">
         <div class="container p-4">
             <div class="text-center">
                 <h2>Stay in The Loop</h2>
-                <p class="lead">
-
-                Get the latest updates as they happen...</p>
+                <p class="lead">Get the latest updates as they happen...</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
                     <p class="text-muted my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi
                         fugiat eveniet dolore nostrum deleniti rerum praesentium pariatur impedit dicta. Reiciendis iste
                         perspiciatis soluta! Sed minima temporibus quam mollitia asperiores.</p>
-                    
-                    
-                      <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" 
-                    role="button" aria-controls="sidebar">  <button class="btn btn-primary"> Register for Updates</button></a>
-                     
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Register for Updates
+                    </button>
+
+                </div>
             </div>
         </div>
     </section>
 
-    
+    <!-- offcanvas code -->
+    <div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title h2 text-decoration-underline" id="offcanvasExampleLabel">Register for Emails
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+
+                <form>
+                    <label for="email" class="form-label text-decoration-underline">Email Address:</label>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-person-arms-up"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="e.g. peach@example.com" id="email"
+                            required>
+                        <span class="input-group-text">
+                            <span class="tt" data-bs-placement="bottom" title="Enter your email address">
+                                <i class="bi bi-patch-question text-muted"></i>
+                            </span>
+                    </div>
+                    <div>
+
+                    </div>
+                    <label for="subject" class="form-label text-decoration-underline"> Choose Categories to Receive
+                        Emails About:</label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Extracariculars Activies
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Afterschool Care
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Tutoring
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Pediatric
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Transportation Services
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Food Saftey
+                        </label>
+                    </div>
+
+                    <br>
+                    
+                        <label for="subject" class="form-label text-decoration-underline">Age Rating</label>
+                        <div class="input-group mb-4">
+                            <span class="input-group-text">
+                                <i class="bi bi-chat-right-dots"></i>
+                            </span>
+                            <select class="form-select" id="subject" required>
+                                <option value="pricing" selected>3+ years</option>
+                                <option value="content"> 5+ years</option>
+                                <option value="other">8+ years </option>
+                                <option value="other">11+ years </option>
+                                <option value="other">14+ years</option>
+                                <option value="other">16+ years</option>
+                            </select>
+                        </div>
+
+                          <div class=" text-center">
+                            <button type="submit" class="btn btn-secondary">Submit!</button>
+                        </div>
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+   
+
+
 
 
   
@@ -198,7 +297,13 @@
         </ul>
     </footer>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const tooltips = document.querySelectorAll('.tt')
+        tooltips.forEach(t => {
+            new bootstrap.Tooltip(t)
+        })
+    </script>
 </body>
 
 </html>

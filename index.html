@@ -18,14 +18,13 @@
 
     <!-- navbar -->
 
-
-
     <section>
         <nav class="navbar navbar-expand-md navbar-dark bg-primary">
             <div class="container-xxl">
                 <a href="#home-page" class=" ps-3 navbar-brand">
 
-                    <div id="name" class=" p-2">BergenHelp</div>
+                    <div id="name" class=" ">
+                         <img src="images/BergenHelpLogo.png" class="rounded-circle mt-0" alt="Bergen Help Logo" style="width: 70px; height: 70px;"> BergenHelp</div>
 
                 </a>
                 <!-- toggle button for mobile nav -->
@@ -49,7 +48,7 @@
 
 
                         <li class="nav-item">
-                             <a href="map.html" class="nav-link mx-2">Map</a>
+                            <a href="map.html" class="nav-link mx-2">Map</a>
                         </li>
 
 
@@ -91,7 +90,7 @@
 
     <!-- resources -->
     <!-- secondary-nav: sorting sections sepratly (ex. afterschool care, extracariculars, kid-friendly activies, health/doc) -->
-    <section >
+    <section>
         <div class="container-lg">
             <div class="text-center pt-5">
                 <h1>Resources</h1>
@@ -168,7 +167,8 @@
                     <div class="card-body">
                         <h5 class="card-title text-center h2 mb-5">Food Pantries</h5>
 
-                        <p class="card-text text-center">Find local food banks and pantries near your area. As well as donation centers.</p>
+                        <p class="card-text text-center">Find local food banks and pantries near your area. As well as
+                            donation centers.</p>
 
                     </div>
                 </div>
@@ -184,7 +184,7 @@
     </section>
 
 
-     <!-- get updates -->
+    <!-- get updates -->
     <section class="bg-light py-4 ">
         <div class="container p-4">
             <div class="text-center">
@@ -196,11 +196,112 @@
                     <p class="text-muted my-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi nisi
                         fugiat eveniet dolore nostrum deleniti rerum praesentium pariatur impedit dicta. Reiciendis iste
                         perspiciatis soluta! Sed minima temporibus quam mollitia asperiores.</p>
-                    <button class="btn btn-primary"> Register for Updates</button>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                        Register for Updates
+                    </button>
+
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- offcanvas code -->
+    <div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+            aria-labelledby="offcanvasExampleLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title h2 text-decoration-underline" id="offcanvasExampleLabel">Register for Emails
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+
+                <form>
+                    <label for="email" class="form-label text-decoration-underline">Email Address:</label>
+                    <div class="mb-4 input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-person-arms-up"></i>
+                        </span>
+                        <input type="email" class="form-control" placeholder="e.g. peach@example.com" id="email"
+                            required>
+                        <span class="input-group-text">
+                            <span class="tt" data-bs-placement="bottom" title="Enter your email address">
+                                <i class="bi bi-patch-question text-muted"></i>
+                            </span>
+                    </div>
+                    <div>
+
+                    </div>
+                    <label for="subject" class="form-label text-decoration-underline"> Choose Categories to Receive
+                        Emails About:</label>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Extracariculars Activies
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Afterschool Care
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Tutoring
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Pediatric
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Transportation Services
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                        <label class="form-check-label" for="defaultCheck1">
+                            Food Saftey
+                        </label>
+                    </div>
+
+                    <br>
+                    
+                        <label for="subject" class="form-label text-decoration-underline">Age Rating</label>
+                        <div class="input-group mb-4">
+                            <span class="input-group-text">
+                                <i class="bi bi-chat-right-dots"></i>
+                            </span>
+                            <select class="form-select" id="subject" required>
+                                <option value="pricing" selected>3+ years</option>
+                                <option value="content"> 5+ years</option>
+                                <option value="other">8+ years </option>
+                                <option value="other">11+ years </option>
+                                <option value="other">14+ years</option>
+                                <option value="other">16+ years</option>
+                            </select>
+                        </div>
+
+                          <div class=" text-center">
+                            <button type="submit" class="btn btn-secondary">Submit!</button>
+                        </div>
+                </form>
+            </div>
+
+
+
+        </div>
+    </div>
+   
 
 
 
