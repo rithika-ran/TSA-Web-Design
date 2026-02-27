@@ -1,0 +1,12 @@
+
+
+// import bootstrap 
+@use '../node_modules/bootstrap/scss/bootstrap' with (
+    $primary: #4b99ff,
+    $secondary: #f4f4ef,
+ $success: #efe8d8,
+ $warning: #E8A664, 
+ $danger: #BBCCCC,
+  $light: #FEF9F3,
+   $dark: #453839,
+);

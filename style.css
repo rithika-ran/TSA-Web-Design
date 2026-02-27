@@ -110,9 +110,17 @@ header {
     transition: text-decoration 0.3s ease;
 }
 
-.split-bg {
-   background: linear-gradient(to bottom, aliceblue 0%, aliceblue 50%, white 50%, white 100%);
+.split-bg-blu {
+   background: linear-gradient(to bottom, #Caf0e0 0%, #Caf0e0 50%, white 50%, white 100%);
 }
+.split-bg-pink {
+   background: linear-gradient(to bottom, #FCD5CE 0%, #FCD5CE 50%, white 50%, white 100%);
+}
+
+.split-bg-light {
+   background: linear-gradient(to bottom, #F9E5D5 0%, #F9E5D5 50%, white 50%, white 100%);
+}
+
 
 .video-bg-apply {
     height: 400px;
@@ -121,4 +129,8 @@ header {
     z-index: 10;
     object-fit: cover;
 
+}
+
+.header-font {
+    font-family:  "Luckiest Guy", sans-serif ;
 }
