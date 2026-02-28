@@ -11,12 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
-  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 
 
 </head>
 
-<body>
+<body class="overflow-x-hidden">
 
     <!-- nav bar -->
     <section>
@@ -24,8 +24,10 @@
             <div class="container-xxl">
                 <a href="#home-page" class=" ps-3 navbar-brand">
 
-                     <div id="name" class=" ">
-                         <img src="images/BergenHelpLogo.png" class="rounded-circle mt-0" alt="Bergen Help Logo" style="width: 70px; height: 70px;"> BergenHelp</div>
+                    <div id="name" class=" ">
+                        <img src="images/BergenHelpLogo.png" class="rounded-circle mt-0" alt="Bergen Help Logo"
+                            style="width: 70px; height: 70px;"> BergenHelp
+                    </div>
 
 
                 </a>
@@ -50,7 +52,7 @@
 
 
                         <li class="nav-item">
-                             <a href="map.html" class="nav-link mx-2">Map</a>
+                            <a href="map.html" class="nav-link mx-2">Map</a>
                         </li>
 
 
@@ -76,14 +78,15 @@
 
 
     <!-- photo -->
-    <div class="d-flex" style="height: max-content;">
-        <img src="images/contact-page/Untitled design (1).png" alt="test" class="card m-3 col-5">
-        
 
 
 
-<!-- form -->
-        <div class="col-6 ps-5">
+    <div class="d-flex row" style="height: max-content;">
+        <img src="images/contact-page/Untitled design (1).png" alt="test" class=" m-3 col-md-5">
+
+
+        <!-- form -->
+        <div class="col-md-6  ps-5">
             <div class="text-center">
                 <h1 class="pt-5">Contact Us!</h1>
                 <h2 class="lead">If you ever need anything from us, we are just one message away!</h2>
@@ -97,8 +100,8 @@
                     <span class="input-group-text">
                         <i class="bi bi-envelope"></i>
                     </span>
-                   <input type="text" class="form-control" placeholder="e.g. Princess Peach" id="name" required>
-                    
+                    <input type="text" class="form-control" placeholder="e.g. Princess Peach" id="name" required>
+
                     <span class="input-group-text">
                         <span class="tt" data-bs-placement="bottom" title="Enter your name">
                             <i class="bi bi-patch-question text-muted"></i>
@@ -149,14 +152,43 @@
 
         </div>
 
-
-
     </div>
 
 
 
-      <!-- get updates -->
-    <section class="bg-light py-4 ">
+
+    <!-- social media -->
+    <section class="bg-light">
+
+        <h2 class="pt-5 text-center">Follow Us!</h2>
+        <div class="row d-flex justify-content-center">
+
+
+            <div class=" mt-0 mx-5 mb-4 rounded-5 overflow-x-hidden color sm-shadow" style="width: 15rem;">
+                <a href="https://www.instagram.com/"   target="_blank" rel="noopener noreferrer">
+                    <img src="/images/contact-page/insta.png" class="card-img-top" alt="instagram logo"></a>
+
+            </div>
+
+            <div class=" mb-4 mx-5 mt-0 rounded-5 overflow-x-hidden color sm-shadow" style="width: 15rem;">
+                <a href="https://www.facebook.com/"  target="_blank" rel="noopener noreferrer">
+                    <img src="/images/contact-page/facebook.png" class="card-img-top" alt="facebook logo">
+                </a>
+            </div>
+
+            <div class=" mb-4 mx-5 mt-0 rounded-5 overflow-x-hidden color sm-shadow " style="width: 15rem;">
+                <a href="https://x.com/"  target="_blank" rel="noopener noreferrer">
+                    <img src="/images/contact-page/x-twitter-logo.png" class="card-img-top" alt="x logo">
+                </a>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- get updates -->
+    <section class="py-4 ">
         <div class="container p-4">
             <div class="text-center">
                 <h2>Stay in The Loop</h2>
@@ -164,8 +196,10 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">
-                    <p class="text-muted my-4">Our website is constantly getting updated with new resources in all six categories. Sign up for 
-                        our email notifications to get the newest updates. Simply fill out a quick form specifying which categories you 
+                    <p class="text-muted my-4">Our website is constantly getting updated with new resources in all six
+                        categories. Sign up for
+                        our email notifications to get the newest updates. Simply fill out a quick form specifying which
+                        categories you
                         would like to receive email updates about.
                     </p>
                     <button class="btn bg-secondary border-dark" type="button" data-bs-toggle="offcanvas"
@@ -248,25 +282,25 @@
                     </div>
 
                     <br>
-                    
-                        <label for="subject" class="form-label text-decoration-underline">Age Rating</label>
-                        <div class="input-group mb-4">
-                            <span class="input-group-text">
-                                <i class="bi bi-chat-right-dots"></i>
-                            </span>
-                            <select class="form-select" id="subject" required>
-                                <option value="pricing" selected>3+ years</option>
-                                <option value="content"> 5+ years</option>
-                                <option value="other">8+ years </option>
-                                <option value="other">11+ years </option>
-                                <option value="other">14+ years</option>
-                                <option value="other">16+ years</option>
-                            </select>
-                        </div>
 
-                          <div class=" text-center">
-                            <button type="submit" class="btn btn-secondary">Submit!</button>
-                        </div>
+                    <label for="subject" class="form-label text-decoration-underline">Age Rating</label>
+                    <div class="input-group mb-4">
+                        <span class="input-group-text">
+                            <i class="bi bi-chat-right-dots"></i>
+                        </span>
+                        <select class="form-select" id="subject" required>
+                            <option value="pricing" selected>3+ years</option>
+                            <option value="content"> 5+ years</option>
+                            <option value="other">8+ years </option>
+                            <option value="other">11+ years </option>
+                            <option value="other">14+ years</option>
+                            <option value="other">16+ years</option>
+                        </select>
+                    </div>
+
+                    <div class=" text-center">
+                        <button type="submit" class="btn btn-secondary">Submit!</button>
+                    </div>
                 </form>
             </div>
 
@@ -277,7 +311,7 @@
 
 
 
-  
+
     <!-- footer  -->
     <br>
 
@@ -298,7 +332,7 @@
         </ul>
     </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         const tooltips = document.querySelectorAll('.tt')
         tooltips.forEach(t => {
