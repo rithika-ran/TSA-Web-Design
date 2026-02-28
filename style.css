@@ -123,13 +123,11 @@ header {
 
 
 .video-bg-apply {
-    height: 400px;
-    width: 1264px;
-    background-position: absolute;
-    z-index: 10;
+  
     object-fit: cover;
 
 }
+
 
 .header-font {
     font-family:  "Luckiest Guy", sans-serif ;
