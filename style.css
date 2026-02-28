@@ -89,14 +89,14 @@ header {
     background-size: cover;
      background-position:center ;
      background-repeat: no-repeat; 
-     background-image: url(/images/home-page/bergenhelpbanner.png)
+     background-image: url(images/home-page/bergenhelpbanner.png)
 }
 
 .mission-bg-img{
     background-size: cover;
    
      background-repeat: no-repeat; 
-     background-image: url(/images/home-page/our-mission-background.png)
+     background-image: url(images/home-page/our-mission-background.png)
 }
 
 
