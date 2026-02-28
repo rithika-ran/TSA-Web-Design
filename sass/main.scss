@@ -2,11 +2,11 @@
 
 // import bootstrap 
 @use '../node_modules/bootstrap/scss/bootstrap' with (
-    $primary: #4b99ff,
+    $primary:  #59b6f0 ,
     $secondary: #f4f4ef,
- $success: #efe8d8,
- $warning: #E8A664, 
+ $success: #fefcf7,
+ $warning: #ececec, 
  $danger: #BBCCCC,
-  $light: #FEF9F3,
+  $light: #f9f8f6,
    $dark: #453839,
 );
