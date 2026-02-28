@@ -89,19 +89,19 @@ header {
     background-size: cover;
      background-position:center ;
      background-repeat: no-repeat; 
-     background-image: url(/images/home-page/new-banner.png);
+     background-image: url(/images/home-page/bergenhelpbanner.png)
 }
 
 .mission-bg-img{
     background-size: cover;
-     background-position: ;
+   
      background-repeat: no-repeat; 
      background-image: url(/images/home-page/our-mission-background.png)
 }
 
 
 .color:hover{
-    color: blue;
+    color: rgb(22, 22, 108);
     transform:translateY(-3px) ;
     transition: color  0.3s ease, transform 0.25s ease;
 }
@@ -111,14 +111,14 @@ header {
 }
 
 .split-bg-blu {
-   background: linear-gradient(to bottom, #Caf0e0 0%, #Caf0e0 50%, white 50%, white 100%);
+   background: linear-gradient(to bottom, #DDEEF7 0%, #DDEEF7 50%, white 50%, white 100%);
 }
 .split-bg-pink {
-   background: linear-gradient(to bottom, #FCD5CE 0%, #FCD5CE 50%, white 50%, white 100%);
+   background: linear-gradient(to bottom, #d9D8B8 0%, #D9D8B8 50%, white 50%, white 100%);
 }
 
 .split-bg-light {
-   background: linear-gradient(to bottom, #F9E5D5 0%, #F9E5D5 50%, white 50%, white 100%);
+   background: linear-gradient(to bottom, #CFE3D9 0%, #CFE3D9 50%, white 50%, white 100%);
 }
 
 
