@@ -139,7 +139,8 @@ header {
 
 /* RESOURCE LIST */
 .searchBar {
-    max-width: fit-content
+    max-width: 700px;
+    transform: translateX(25px)
 }
 
 .card {
