@@ -8,55 +8,27 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="resources.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="css/main.min.css">
-    <style>
-        section {
-            padding: 60px 0
-        }
-
-        .scroll-box {
-            width: fit-content;
-            height: 21rem;
-            border: 1px solid #ccc;
-            overflow-y: auto;
-            /* Vertical scrollbar when needed */
-            overflow-x: hidden;
-            /* Hide horizontal scrollbar */
-            padding: 30px;
-        }
-
-        #intro_to_page {
-            /* Set the background image */
-            background-image: url('https://th.bing.com/th/id/R.edc2fd6f40af132242924913bc3a9438?rik=AQinanDMmiGmug&riu=http%3a%2f%2fwww.buildingfamilies.net%2fwp-content%2fuploads%2f2014%2f09%2fbigstock-Portrait-of-happy-family-with-48536213.jpg&ehk=a%2fUsfG87TzEc0492LPYy7kLCux7BfULfN0iV0jxBrg8%3d&risl=&pid=ImgRaw&r=0');
-
-            /* Make it cover the whole page */
-            background-size: cover;
-
-            background-position: center;
-
-            background-repeat: no-repeat;
-
-            /* Set a fallback background color */
-            background-color: #cccccc;
-            height: 25rem
-        }
-    </style>
 </head>
 
 <body>
     <!-- navbar -->
 
-   <section class="p-0">
+     <section>
         <nav class="navbar navbar-expand-md navbar-dark bg-primary">
             <div class="container-xxl">
                 <a href="#home-page" class=" ps-3 navbar-brand">
 
-                       <div id="name" class=" ">
-                         <img src="images/BergenHelpLogo.png" class="rounded-circle mt-0" alt="Bergen Help Logo" style="width: 70px; height: 70px;"> BergenHelp</div>
+                    <div id="name" class=" ">
+                        <img src="images/BergenHelpLogo.png" class="rounded-circle mt-0" alt="Bergen Help Logo"
+                            style="width: 70px; height: 70px;"> BergenHelp
+                    </div>
+
 
                 </a>
                 <!-- toggle button for mobile nav -->
@@ -80,7 +52,7 @@
 
 
                         <li class="nav-item">
-                             <a href="map.html" class="nav-link mx-2">Map</a>
+                            <a href="map.html" class="nav-link mx-2">Map</a>
                         </li>
 
 
@@ -104,64 +76,103 @@
 
     <!-- HTML -->
     <section id="intro_to_page">
-        <div class="container text-center " style="transform: translateY(60px);">
-            <h1 class="text-light"  >BergenHelp</h1>
+        <div class="container-fluid text-center" id="intro">
+            <h1 class="text-light">BergenHelp</h1>
             <p class="text-light">For parents, for kids!</p>
         </div>
     </section>
 
-<section class="mainResources bg-light">
+    <section class="mainResources bg-light p-3">
 
-    <h2 class="text-center">We have a variety of opportunities present:</h2>
+        <h2 class="text-center" style="transform: translateY(15px)">We have many opportunities:</h2>
 
-    <div id="carouselExampleAutoplaying" class="carousel slide justify-content-center" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    <div class="d-flex flex-column align-items-center justify-content-center">
-    <h3>SOMETHING</h3>
-      <img src="..." class="img-fluid w-50" alt="...">
-    </div>
-    </div>
-    <div class="carousel-item">
-    <div class="d-flex flex-column align-items-center justify-content-center">
-    <h3>SOMETHING</h3>
-      <img src="..." class="img-fluid w-50" alt="...">
-    </div>
-    </div>
-    <div class="carousel-item">
-    <div class="d-flex flex-column align-items-center justify-content-center">
-    <h3>SOMETHING</h3>
-      <img src="..." class="img-fluid w-50" alt="...">
-    </div>
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
-</section>
+        <div id="carouselExampleAutoplaying" class="carousel slide justify-content-center m-3" data-bs-ride="carousel"
+            style="transform: translateY(35px)">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex flex-column align-items-center justify-content-center p-2">
+                        <h3 class="carousel-h"> <strong>Extracurriculars</strong></h3>
+                        <img src="Images/Untitled design.png" class="img-fluid w-50 info-image" alt="...">
+                        <p class="text-muted my-3"><i class="bi bi-brush-fill"></i></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <h3 class="carousel-h"><strong>Education</strong></h3>
+                        <img src="Images/Education.png" class="img-fluid w-50 info-image" alt="...">
+                        <p class="text-muted mb-3"><i class="bi bi-backpack-fill"></i></p>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <h3 class="carousel-h"><strong>After-School Care</strong></h3>
+                        <img src="Images/schoolcare.png" class="img-fluid w-50 info-image" alt="...">
+                        <p class="text-muted mb-3"><i class="bi bi-spellcheck"></i></p>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <h3 class="carousel-h"><strong>Pediatrics</strong></h3>
+                        <img src="Images/pediatrics.png" class="img-fluid w-50 info-image" alt="...">
+                        <p class="text-muted mb-3"><i class="bi bi-clipboard-heart-fill"></i></p>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <h3 class="carousel-h"><strong>Transporation</strong></h3>
+                        <img src="Images/transportation.png" class="img-fluid w-50 info-image" alt="...">
+                        <p class="text-muted mb-3"><i class="bi bi-bus-front-fill"></i></p>
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <h3 class="carousel-h"><strong>Food Pantries</strong></h3>
+                        <img src="Images/food.png" class="img-fluid w-50 info-image" alt="...">
+                        <p class="text-muted mb-3"><i class="bi bi-fork-knife"></i></p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
 
     <section id="resourcelist">
-        <h2 class="mx-4">Resources</h2>
+        <h2 class="m-4">Resources</h2>
 
-        <input type="text" id="cardSearch" class="form-control mx-4 my-3" placeholder="Search resources...">
+        <div class="input-group searchBar">
+            <span class=" mb-4 input-group-text">
+                <i class="bi bi-search"></i>
+            </span>
+            <input type="text" id="cardSearch" class="form-control mb-4" placeholder="Search resources...">
 
-        <div class="container text-center scroll-box">           
+        </div>
 
+        <hr>
+
+        <div class="container-xl text-center cards-list">
             <!-- CARDS -->
             <div class="row">
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="https://img.freepik.com/premium-photo/photo-evening-nature-landscape-with-river-lake-view-beautiful-trees_763111-93158.jpg?w=2000"
                             class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -169,11 +180,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -181,11 +193,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -193,11 +206,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -205,11 +219,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -217,11 +232,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -229,11 +245,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -241,11 +258,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -253,11 +271,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -265,11 +284,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -277,11 +297,12 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
                             <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
@@ -289,13 +310,14 @@
                 </div>
 
                 <div class="col">
-                    <div class="card my-4 shadow p-3 mb-5 bg-body-tertiary rounded" style="width: 18rem;">
+                    <div class="card my-4 shadow p-3 mb-2 bg-body-tertiary rounded" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card banana</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                            <p class="card-text card-description">Some quick example text to build on the card title and
+                                make up the bulk
                                 of the card’s content.</p>
-                            <a href="#" class="btn btn-primary" target="_blank">Go somewhere</a>
+                            <a href="#resource_link.html" class="btn btn-primary" target="_blank">Go somewhere</a>
                         </div>
                     </div>
                 </div>
@@ -304,6 +326,28 @@
         </div>
     </section>
 
+
+    <!-- FOOTER -->
+    <section>
+          
+
+    <footer class=" mb-0 mt-0 bg-light d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
+        <p class="col-md-4 mb-0 text-body-secondary"> © 2026 Bergen Help, Inc</p>
+        <a href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center link-body-emphasis text-decoration-none"
+            aria-label="footer">
+            <svg class="bi me-2" width="40" height="32" aria-hidden="true>
+                                <use xlink:href=" #bootstrap"></use></svg>
+        </a>
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Resource</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Map</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact</a></li>
+            <li class="nav-item"><a href="apply.html" class="nav-link px-2 text-body-secondary">Apply</a></li>
+        </ul>
+    </footer>
+    </section>
 
     <!-- JAVASCRIPT SECTION -->
     <script>
