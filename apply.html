@@ -104,14 +104,14 @@
             <div class="row justify-content-center mb-5">
 
                 <div class="col-11 col-md-8 col-lg-10 bg-light rounded-5 p-4 p-md-5 shadow-sm">
-                    <form>
+                    <form id="contact-form">
 
                         <label for="name" class="form-label">Name:</label>
                         <div class="input-group mb-4">
                             <span class="input-group-text">
                                 <i class="bi bi-envelope"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="e.g. Princess Peach" id="name"
+                            <input type="text" class="form-control text-dark " placeholder="e.g. Princess Peach" id="name-input" 
                                 required>
                             <span class="input-group-text">
                                 <span class="tt" data-bs-placement="bottom" title="Enter the name of the organization">
@@ -121,12 +121,12 @@
                         </div>
 
 
-                        <label for="email" class="form-label">Email Address:</label>
+                        <label for="email" class="form-label ">Email Address:</label>
                         <div class="mb-4 input-group">
                             <span class="input-group-text">
                                 <i class="bi bi-person-arms-up"></i>
                             </span>
-                            <input type="email" class="form-control" placeholder="e.g. peach@example.com" id="email"
+                            <input type="email" class="form-control " id="email-input" placeholder="e.g. peach@example.com" 
                                 required>
                             <span class="input-group-text">
                                 <span class="tt" data-bs-placement="bottom"
@@ -143,7 +143,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-browser-chrome"></i>
                             </span>
-                            <input type="text" class="form-control" placeholder="e.g. https://example.org" id="url"
+                            <input type="text" class="form-control " placeholder="e.g. https://example.org" id="url-input"
                                 required>
                             <span class="input-group-text">
                                 <span class="tt" data-bs-placement="bottom" title="Enter in website URL">
@@ -153,13 +153,13 @@
                         </div>
 
 
-                        <label for="address" class="form-label">Address:</label>
+                        <label for="address" class="form-label ">Address:</label>
                         <div class="input-group mb-4">
                             <span class="input-group-text">
                                 <i class="bi bi-geo-alt"></i>
                             </span>
                             <input type="text" class="form-control" placeholder="e.g. 123 Main St, City, NJ 07632"
-                                id="url" required>
+                                required>
                             <span class="input-group-text">
                                 <span class="tt" data-bs-placement="bottom"
                                     title="Enter your address, if otherwise use N/A">
@@ -189,7 +189,7 @@
                             <span class="input-group-text">
                                 <i class="bi bi-telephone"></i>
                             </span>
-                            <input type="tel" class="form-control" placeholder="(201)-123-4567" id="phone-number">
+                            <input type="tel" class="form-control " placeholder="(201)-123-4567" id="phone-number-input">
                             <span class="input-group-text">
                                 <span class="tt" data-bs-placement="bottom"
                                     title="Enter a business number we can use to reach you">
@@ -198,16 +198,17 @@
                             </span>
                         </div>
 
-                        <label for="query" class="form-label">Give us a little description about what you guys
+                        <label for="query" class="form-label ">Give us a little description about what you guys
                             offer</label>
                         <div class="form-floating mb-4">
-                            <textarea id="query" class="form-control" style="height: 140px;"></textarea>
+                            <textarea id="description-input" class="form-control " style="height: 140px;"></textarea>
                             <label for="query">Your query...</label>
                         </div>
 
                         <div class=" pt-4 text-center">
                             <button type="submit" class="btn border-dark btn-secondary">Submit!</button>
                         </div>
+                        <div id="form-feedback"></div>
                     </form>
                 </div>
 
@@ -251,7 +252,7 @@
         integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
         crossorigin="anonymous"></script>
 
-    <script>
+    <!-- <script>
         const tooltips = document.querySelectorAll('.tt')
         tooltips.forEach(t => {
             new bootstrap.Tooltip(t)
@@ -260,12 +261,18 @@
         const myModal = document.getElementById('myModal')
         const myInput = document.getElementById('myInput')
 
-        myModal.addEventListener('shown.bs.modal', () => {
+        if(myModal && myInput){
+             myModal.addEventListener('shown.bs.modal', () => {
             myInput.focus()
         })
-    </script>
+        }
 
+       
 
+        
+    </script> -->
+
+<script src="script.js" defer></script>
 </body>
 
 </html>
