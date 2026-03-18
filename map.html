@@ -69,6 +69,10 @@
                             <a href="apply.html" class="nav-link mx-2">Apply</a>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="reference.html" class="nav-link mx-2">References</a>
+                        </li>
+
                     </ul>
 
 
@@ -158,9 +162,29 @@
             fillOpacity: 0.2
         }).addTo(map).bindPopup('Bergen County, NJ');
 
-        L.marker([40.91, -74.07]).addTo(map)
-            .bindPopup('Paramus, Bergen County');
+        // L.marker([40.91, -74.07]).addTo(map)
+        //     .bindPopup('Paramus, Bergen County');
+            
+            map.locate({ setView: true, maxZoom: 14 });
+
+
+map.on('locationfound', function (e) {
+    var radius = e.accuracy;
+
+    L.marker(e.latlng).addTo(map)
+        .bindPopup("You are here!").openPopup();
+
+    L.circle(e.latlng, radius).addTo(map);
+});
+
+
+map.on('locationerror', function (e) {
+    alert("Location access denied 😢");
+});
     </script>
+
+   
+
 </body>
 
 </html>
