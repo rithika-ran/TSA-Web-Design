@@ -37,7 +37,7 @@ pediatric.addEventListener("click", (e) => {
 })
 
 
-btnSubmit.addEventListener("click", (e) => {
+btnSubmit.addEventListener("submit", (e) => {
     e.preventDefault();
 
     cards.forEach(card => {
