@@ -24,19 +24,6 @@ const education = document.querySelector(".edu")
 const extracurricular = document.querySelector(".extraCurr")
 const pediatric = document.querySelector(".pediatric")
 
-// EVENT LISTENER
-education.addEventListener("click", (e) => {
-    education.classList.add("checked")
-})
-
-extracurricular.addEventListener("click", (e) => {
-    extracurricular.classList.add("checked")
-})
-pediatric.addEventListener("click", (e) => {
-    pediatric.classList.add("checked")
-})
-
-
 btnSubmit.addEventListener("submit", (e) => {
     e.preventDefault();
 
