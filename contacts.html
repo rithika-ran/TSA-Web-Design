@@ -149,7 +149,7 @@
 
                 <label for="query" class="form-label">Write us a message!</label>
                 <div class="form-floating mb-4">
-                    <textarea id="message-input" name="message" class="form-control" style="height: 140px;"
+                    <textarea id="message-input" name="query" class="form-control" style="height: 140px;"
                         required></textarea>
                     <label for="query">Your message...</label>
                 </div>
@@ -247,7 +247,7 @@
                         <span class="input-group-text">
                             <i class="bi bi-person-arms-up"></i>
                         </span>
-                        <input type="email" class="form-control" placeholder="e.g. peach@example.com" id="email-updates"
+                        <input type="email" class="form-control" placeholder="e.g. peach@example.com" id="email-updates" name="email"
                             required>
                         <span class="input-group-text">
                             <span class="tt" data-bs-placement="bottom" title="Enter your email address">
@@ -263,38 +263,38 @@
 
                     <fieldset class="checkbox-group-required">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" name="extracurriculars" value="yes" id="defaultCheck1">
                             <label class="form-check-label" for="defaultCheck1">
                                 Extracurriculars Activies
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
-                            <label class="form-check-label" for="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" name="afterschoolCare" value="yes" id="defaultCheck2">
+                            <label class="form-check-label" for="defaultCheck2">
                                 Afterschool Care
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
-                            <label class="form-check-label" for="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" name="education" value="yes" id="defaultCheck3">
+                            <label class="form-check-label" for="defaultCheck3">
                                 Education
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
-                            <label class="form-check-label" for="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" name="pediatrics" value="yes" id="defaultCheck4">
+                            <label class="form-check-label" for="defaultCheck4">
                                 Pediatric
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
-                            <label class="form-check-label" for="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" name="transportation" value="yes" id="defaultCheck5">
+                            <label class="form-check-label" for="defaultCheck5">
                                 Transportation Services
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck6">
-                            <label class="form-check-label" for="defaultCheck1">
+                            <input class="form-check-input" type="checkbox" name="foodSafety" value="yes" id="defaultCheck6">
+                            <label class="form-check-label" for="defaultCheck6">
                                 Food Saftey
                             </label>
                         </div>
@@ -308,13 +308,13 @@
                         <span class="input-group-text">
                             <i class="bi bi-chat-right-dots"></i>
                         </span>
-                        <select class="form-select" id="subject" required>
-                            <option value="pricing" selected>3+ years</option>
-                            <option value="content"> 5+ years</option>
-                            <option value="other">8+ years </option>
-                            <option value="other">11+ years </option>
-                            <option value="other">14+ years</option>
-                            <option value="other">16+ years</option>
+                        <select class="form-select" id="age" name="age" required>
+                            <option value="3+" selected>3+ years</option>
+                            <option value="5+"> 5+ years</option>
+                            <option value="8+">8+ years </option>
+                            <option value="11+">11+ years </option>
+                            <option value="14+">14+ years</option>
+                            <option value="16+">16+ years</option>
                         </select>
                     </div>
 

@@ -46,10 +46,43 @@ contactForm.addEventListener("submit", (e) => {
     // all gates are passed 
     feedback.textContent = `✔ Thanks ${name}! We got your message.`
     feedback.style.color = "#00e025"
-    contactForm.reset(); // clears all input fields 
+   
+
+     const scriptURL = 'https://script.google.com/macros/s/AKfycbwuIzqVAlJTQ1TkMvLkAgecepHfFC3iQ_Zed3cRFVNLNEQk8IwypZZzhrlHNK-G1hVJxA/exec';
+
+
+    const formData = new FormData(contactForm)
+const payload = Object.fromEntries(formData.entries())
+
+fetch(scriptURL, {
+method: 'POST',
+body: JSON.stringify(payload),
+})
+.then(res => res.text())
+.then(msg => {
+feedback.textContent = `✔ Thanks ${name}! We got your message.`
+feedback.style.color = "#00e025"
+contactForm.reset()
+})
+.catch(err => console.error(err))
+
+  
+
 })
 
   
+
+
+
+
+
+
+
+
+
+
+
+
 
 // // register for email updates!!!!
 
@@ -79,6 +112,41 @@ updateForm.addEventListener('submit', (e) => {
     
     emailFeedback.textContent = `✔ Thanks! We'll send the latest updates.`
     emailFeedback.style.color = "#00e025"
-    updateForm.reset(); // clears all input fields 
+
+
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbyj4df--uXteTp856wd9zSliZZpYG77EWpB_fEyeHegFycyF8UUxCCfAaCQTjE8K6IJ/exec';
+
+
+    const formData = new FormData(updateForm)
+const payload = Object.fromEntries(formData.entries())
+
+const everyCheckboxes = [
+  "extracurriculars",
+  "afterschoolCare",
+  "education",
+  "pediatrics",
+  "transportation",
+  "foodSafety"
+]
+
+everyCheckboxes.forEach(name => {
+  if (!payload[name]) {
+    payload[name] = "no"
+  }
+})
+
+fetch(scriptURL, {
+method: 'POST',
+body: JSON.stringify(payload),
+})
+.then(res => res.text())
+.then(msg => {
+emailFeedback.textContent = `✔ Thanks! We'll send the latest updates.`
+emailFeedback.style.color = "#00e025"
+updateForm.reset()
+})
+.catch(err => console.error(err))
+
+
 
   })

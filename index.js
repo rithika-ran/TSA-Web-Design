@@ -24,6 +24,41 @@ updateForm.addEventListener('submit', (e) => {
     
     emailFeedback.textContent = `✔ Thanks! We'll send the latest updates.`
     emailFeedback.style.color = "#00e025"
-    updateForm.reset(); // clears all input fields 
+
+
+   const scriptURL = 'https://script.google.com/macros/s/AKfycbyj4df--uXteTp856wd9zSliZZpYG77EWpB_fEyeHegFycyF8UUxCCfAaCQTjE8K6IJ/exec';
+
+
+    const formData = new FormData(updateForm)
+const payload = Object.fromEntries(formData.entries())
+
+const everyCheckboxes = [
+  "extracurriculars",
+  "afterschoolCare",
+  "education",
+  "pediatrics",
+  "transportation",
+  "foodSafety"
+]
+
+everyCheckboxes.forEach(name => {
+  if (!payload[name]) {
+    payload[name] = "no"
+  }
+})
+
+fetch(scriptURL, {
+method: 'POST',
+body: JSON.stringify(payload),
+})
+.then(res => res.text())
+.then(msg => {
+emailFeedback.textContent = `✔ Thanks! We'll send the latest updates.`
+emailFeedback.style.color = "#00e025"
+updateForm.reset()
+})
+.catch(err => console.error(err))
+
+
 
   })

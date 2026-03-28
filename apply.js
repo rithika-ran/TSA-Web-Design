@@ -46,5 +46,36 @@ applyForm.addEventListener("submit", (e) => {
     // all gates are passed 
     feedback.textContent = `✔ Thanks ${name}! We got your message.`
     feedback.style.color = "#00e025"
-    applyForm.reset(); // clears all input fields 
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxrqB8kjcNmRSOkOKupC54DUY2zIricD-WRk7z1NIt0idvq3K9fhL6YNS5mzWezG1tg6w/exec';
+
+
+    const formData = new FormData(applyForm)
+const payload = Object.fromEntries(formData.entries())
+
+fetch(scriptURL, {
+method: 'POST',
+body: JSON.stringify(payload),
 })
+.then(res => res.text())
+.then(msg => {
+feedback.textContent = `✔ Thanks ${name}! We got your message.`
+feedback.style.color = "#00e025"
+applyForm.reset()
+})
+.catch(err => console.error(err))
+
+  
+
+
+
+})
+
+
+
+// collecting apply data
+
+
+
+ 
+
