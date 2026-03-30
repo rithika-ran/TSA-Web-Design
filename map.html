@@ -1,29 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bergen County Map</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BergenHelp Resource Map</title>
     <link rel="stylesheet" href="css/main.min.css">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
 
-    <style>
-        #map {
-            height: 600px;
-            width: 100%;
-        }
-    </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="Resource_info/resource-data.js" defer></script>
+
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Aleo, sans-serif ;
+      background: #f7f7f7;
+      color: #222;
+    }
+
+    .topbar {
+      padding: 16px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .search-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+
+    #searchInput {
+      padding: 14px 16px;
+      border: 1px solid #ccc;
+      border-radius: 14px;
+      font-size: 16px;
+      width: 100%;
+    }
+
+    #locateBtn {
+      border: none;
+      background: #1f4f82;
+      color: white;
+      padding: 0 18px;
+      border-radius: 14px;
+      cursor: pointer;
+      font-size: 15px;
+      min-height: 50px;
+    }
+
+    #locateBtn:hover {
+      background: #173c63;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 16px;
+      padding: 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .panel {
+      background: white;
+      border-radius: 18px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      height: calc(100vh - 120px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .panel h2 {
+      margin: 0;
+      padding: 18px 18px 8px;
+      font-size: 22px;
+    }
+
+    .panel p {
+      margin: 0;
+      padding: 0 18px 12px;
+      color: #555;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    #results {
+      overflow-y: auto;
+      padding: 0 12px 12px;
+    }
+
+    .result-card {
+      background: #fafafa;
+      border: 1px solid #e6e6e6;
+      border-radius: 14px;
+      padding: 14px;
+      margin: 10px 6px;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .result-card:hover {
+      background: #f0f6ff;
+      border-color: #bfd6f3;
+      transform: translateY(-1px);
+    }
+
+    .result-card.active {
+      border: 2px solid #1f4f82;
+      background: #eef5ff;
+    }
+
+    .result-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      line-height: 1.3;
+    }
+
+    .result-card .meta {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .result-card .distance {
+      font-weight: bold;
+      color: #1f4f82;
+      margin-top: 8px;
+    }
+
+    .result-card .hint {
+      margin-top: 6px;
+      font-size: 13px;
+      color: #777;
+    }
+
+    #map {
+      width: 100%;
+      height: calc(100vh - 120px);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .leaflet-popup-content {
+      line-height: 1.5;
+      font-size: 14px;
+    }
+
+    .popup-title {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .popup-line {
+      margin-bottom: 5px;
+    }
+
+    .popup-links a {
+      display: inline-block;
+      margin-top: 8px;
+      margin-right: 12px;
+      color: #1f4f82;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .popup-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .panel,
+      #map {
+        height: 500px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .search-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      #locateBtn {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- navbar -->
-
+ <!-- nav bar -->
     <section>
         <nav class="navbar navbar-expand-md navbar-dark bg-primary">
             <div class="container-xxl">
@@ -83,55 +272,37 @@
     </section>
 
 
+  <div class="topbar">
+    <div class="search-wrap">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for a resource..."
+      />
+      <button id="locateBtn" class="bg-secondary">Find My Location</button>
+    </div>
+  </div>
 
- <div class="bg-light rounded-5 p-2 m-3 text-center">
-            <h1 class="text-center">Bergen County, NJ Map </h1></div>
-   
-    <div id="map"></div>
-
-    <div class="collapse navbar-collapse justify-content-end align-center " id="main-nav">
-        <ul class="h5 navbar-nav">
-            <li class="nav-item ">
-                <a href="index.html" class="nav-link mx-2">Home</a>
-            </li>
-
-            <li class="nav-item">
-                <a href="resources.html" class="nav-link mx-2">Resources</a>
-            </li>
-
-
-            <li class="nav-item">
-                <a href="map.html" class="nav-link mx-2">Map</a>
-            </li>
-
-
-            <li class="nav-item">
-                <a href="contacts.html" class="nav-link mx-2">Contact Us</a>
-            </li>
-
-
-            <li class="nav-item">
-                <a href="apply.html" class="nav-link mx-2">Apply</a>
-            </li>
-
-        </ul>
-
-
+  <div class="layout">
+    <div class="panel">
+      <h2>Nearby Resources</h2>
+      <p id="statusText">Search a resource or enable location to see distances.</p>
+      <div id="results"></div>
     </div>
 
+    <div id="map"></div>
+  </div>
 
-
-    <br>
-
-    <!-- footer -->
-
-    <footer class=" mb-0 bg-light d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+   <!-- footer -->
+    <hr>
+    <footer class=" mb-0 mt-0 bg-light d-flex flex-wrap justify-content-between align-items-center py-3 my-4">
         <p class="col-md-4 mb-0 text-body-secondary"> © 2026 Bergen Help, Inc</p>
         <a href="/"
             class="col-md-4 d-flex align-items-center justify-content-center link-body-emphasis text-decoration-none"
             aria-label="footer">
             <svg class="bi me-2" width="40" height="32" aria-hidden="true">
-                                <use xlink:href=" #bootstrap"></use></svg>
+                <use xlink:href=" #bootstrap"></use>
+            </svg>
         </a>
         <ul class="nav col-md-4 justify-content-end">
             <li class="nav-item"><a href="index.html" class="nav-link px-2 text-body-secondary">Home</a></li>
@@ -142,50 +313,264 @@
         </ul>
     </footer>
 
+  <script src="resources-data.js"></script>
+  <script>
+    const map = L.map("map").setView([40.90, -74.05], 10);
 
-    <script>
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors"
+    }).addTo(map);
 
-        var map = L.map('map').setView([40.90, -74.05], 10);
+    let userLat = null;
+    let userLng = null;
+    let userMarker = null;
+    let userCircle = null;
+    let selectedMarker = null;
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors'
-        }).addTo(map);
+    const resourceMarkers = [];
 
-        var bergenBounds = [
-            [41.00, -74.25], [40.95, -74.05], [40.85, -73.95],
-            [40.80, -74.00], [40.75, -74.10], [40.80, -74.25],
-            [40.90, -74.30], [41.00, -74.25]
-        ];
+    const selectedIcon = L.icon({
+      iconUrl: "https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png",
+      shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png",
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
+    });
 
-        L.polygon(bergenBounds, {
-            color: 'blue',
-            weight: 3,
-            fillOpacity: 0.2
-        }).addTo(map).bindPopup('Bergen County, NJ');
+    function getDistanceMiles(lat1, lon1, lat2, lon2) {
+      const R = 3958.8;
+      const toRad = deg => deg * Math.PI / 180;
 
-        // L.marker([40.91, -74.07]).addTo(map)
-        //     .bindPopup('Paramus, Bergen County');
-            
-            map.locate({ setView: true, maxZoom: 14 });
+      const dLat = toRad(lat2 - lat1);
+      const dLon = toRad(lon2 - lon1);
 
+      const a =
+        Math.sin(dLat / 2) ** 2 +
+        Math.cos(toRad(lat1)) *
+        Math.cos(toRad(lat2)) *
+        Math.sin(dLon / 2) ** 2;
 
-map.on('locationfound', function (e) {
-    var radius = e.accuracy;
+      const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return R * c;
+    }
 
-    L.marker(e.latlng).addTo(map)
-        .bindPopup("You are here!").openPopup();
+    function getDistanceText(resource) {
+      if (resource.distanceMode === "variable") {
+        return "Location varies";
+      }
 
-    L.circle(e.latlng, radius).addTo(map);
-});
+      if (resource.distanceMode === "service") {
+        return "Service-based / not a fixed location";
+      }
 
+      if (resource.lat === null || resource.lng === null) {
+        return "Location unavailable";
+      }
 
-map.on('locationerror', function (e) {
-    alert("Location access denied 😢");
-});
-    </script>
+      if (userLat === null || userLng === null) {
+        return "Enable location to calculate distance";
+      }
 
-   
+      const distance = getDistanceMiles(userLat, userLng, resource.lat, resource.lng);
+      return `${distance.toFixed(1)} miles away`;
+    }
 
+    function getDistanceValue(resource) {
+      if (
+        resource.distanceMode === "fixed" &&
+        resource.lat !== null &&
+        resource.lng !== null &&
+        userLat !== null &&
+        userLng !== null
+      ) {
+        return getDistanceMiles(userLat, userLng, resource.lat, resource.lng);
+      }
+
+      return Infinity;
+    }
+
+    function getGoogleMapsLink(resource) {
+      if (resource.lat !== null && resource.lng !== null) {
+        return `https://www.google.com/maps/dir/?api=1&destination=${resource.lat},${resource.lng}`;
+      }
+      return null;
+    }
+
+    function getPopupHtml(resource) {
+      const mapsLink = getGoogleMapsLink(resource);
+
+      return `
+        <div style="min-width:240px;">
+          <div class="popup-title">${resource.name}</div>
+          <div class="popup-line"><strong>Category:</strong> ${resource.category}</div>
+          <div class="popup-line"><strong>Address:</strong> ${resource.address}</div>
+          <div class="popup-line"><strong>Distance:</strong> ${getDistanceText(resource)}</div>
+          <div class="popup-links">
+            ${resource.page ? `<a href="${resource.page}" target="_blank">View details</a>` : ""}
+            ${mapsLink ? `<a href="${mapsLink}" target="_blank">Get directions</a>` : ""}
+          </div>
+        </div>
+      `;
+    }
+
+    function buildMarkers() {
+      resources.forEach(resource => {
+        if (
+          resource.distanceMode === "fixed" &&
+          resource.lat !== null &&
+          resource.lng !== null
+        ) {
+          const marker = L.marker([resource.lat, resource.lng])
+            .addTo(map)
+            .bindPopup(getPopupHtml(resource));
+
+          marker.resourceId = resource.id;
+          resourceMarkers.push(marker);
+        }
+      });
+    }
+
+    function getFilteredResources(query = "") {
+      const q = query.trim().toLowerCase();
+
+      let filtered = resources.filter(resource =>
+        resource.name.toLowerCase().includes(q) ||
+        resource.category.toLowerCase().includes(q) ||
+        resource.address.toLowerCase().includes(q)
+      );
+
+      filtered = filtered.map(resource => ({
+        ...resource,
+        distanceText: getDistanceText(resource),
+        distanceValue: getDistanceValue(resource)
+      }));
+
+      filtered.sort((a, b) => a.distanceValue - b.distanceValue);
+      return filtered;
+    }
+
+    function renderResults(query = "") {
+      const results = document.getElementById("results");
+      const filtered = getFilteredResources(query);
+
+      if (!filtered.length) {
+        results.innerHTML = `<div class="result-card">No resources found.</div>`;
+        return;
+      }
+
+      results.innerHTML = filtered.map(resource => `
+        <div class="result-card" data-id="${resource.id}">
+          <h3>${resource.name}</h3>
+          <div class="meta">${resource.category}</div>
+          <div class="meta">${resource.address}</div>
+          <div class="distance">${resource.distanceText}</div>
+          <div class="hint">
+            ${resource.distanceMode === "fixed" ? "Click to view on map" : "No fixed map location"}
+          </div>
+        </div>
+      `).join("");
+
+      document.querySelectorAll(".result-card[data-id]").forEach(card => {
+        card.addEventListener("click", () => {
+          document.querySelectorAll(".result-card").forEach(c => c.classList.remove("active"));
+          card.classList.add("active");
+
+          const resource = resources.find(r => r.id === card.dataset.id);
+          openResource(resource);
+        });
+      });
+    }
+
+    function openResource(resource) {
+      if (!resource) return;
+
+      if (
+        resource.lat === null ||
+        resource.lng === null ||
+        resource.distanceMode !== "fixed"
+      ) {
+        alert("This resource does not have a fixed map location.");
+        return;
+      }
+
+      map.flyTo([resource.lat, resource.lng], 14, {
+        duration: 1.2
+      });
+
+      if (selectedMarker) {
+        map.removeLayer(selectedMarker);
+      }
+
+      selectedMarker = L.marker([resource.lat, resource.lng], {
+        icon: selectedIcon
+      }).addTo(map);
+
+      setTimeout(() => {
+        selectedMarker.bindPopup(getPopupHtml(resource)).openPopup();
+      }, 300);
+    }
+
+    function refreshMarkerPopups() {
+      resourceMarkers.forEach(marker => {
+        const resource = resources.find(r => r.id === marker.resourceId);
+        if (resource) {
+          marker.setPopupContent(getPopupHtml(resource));
+        }
+      });
+
+      if (selectedMarker && selectedMarker.getPopup()) {
+        selectedMarker.closePopup();
+      }
+    }
+
+    document.getElementById("searchInput").addEventListener("input", (e) => {
+      renderResults(e.target.value);
+    });
+
+    document.getElementById("locateBtn").addEventListener("click", () => {
+      if (!navigator.geolocation) {
+        document.getElementById("statusText").textContent =
+          "Geolocation is not supported by your browser.";
+        return;
+      }
+
+      document.getElementById("statusText").textContent = "Finding your location...";
+
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          userLat = position.coords.latitude;
+          userLng = position.coords.longitude;
+
+          if (userMarker) map.removeLayer(userMarker);
+          if (userCircle) map.removeLayer(userCircle);
+
+          userMarker = L.marker([userLat, userLng])
+            .addTo(map)
+            .bindPopup("You are here!")
+            .openPopup();
+
+          userCircle = L.circle([userLat, userLng], {
+            radius: position.coords.accuracy
+          }).addTo(map);
+
+          map.setView([userLat, userLng], 12);
+
+          document.getElementById("statusText").textContent =
+            "Location found. Click a resource to see its distance from you.";
+
+          renderResults(document.getElementById("searchInput").value);
+          refreshMarkerPopups();
+        },
+        () => {
+          document.getElementById("statusText").textContent =
+            "Location access denied. Search still works without distance.";
+        }
+      );
+    });
+
+    buildMarkers();
+    renderResults();
+  </script>
 </body>
-
 </html>
