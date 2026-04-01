@@ -83,8 +83,8 @@
     <!-- HTML -->
     <section id="intro_to_page">
         <div class="container-fluid text-center" id="intro">
-            <h1 class="text-light">BergenHelp</h1>
-            <p class="text-light">For parents, for kids!</p>
+            <h1 class="text-light fade-in-left">BergenHelp</h1>
+            <p class="text-light fade-in-left">For parents, for kids!</p>
         </div>
     </section>
 
@@ -108,7 +108,7 @@
                     <div class="carousel-item">
                         <div class="d-flex flex-column align-items-center justify-content-center">
                             <h3 class="carousel-h"><strong>Education</strong></h3>
-                            <img src="images/resources-page/Education.png" class="img-fluid w-50 info-image" alt="...">
+                            <img src="images/resources-page/Education2.png" class="img-fluid w-50 info-image" alt="...">
                             <p class="text-muted mb-3"><i class="bi bi-backpack-fill"></i></p>
 
                         </div>
@@ -162,17 +162,8 @@
     </section>
 
     <section id="resourcelist">
-        <h1 class="m-4 text-center">Resources</h1>
+        <h1 class="m-4">Resources</h1>
         <hr class="my-5">
-        <h3 class="m-4 fw-bold">Search Resources</h3>
-        <div class="input-group searchBar">
-            <span class=" mb-4 input-group-text">
-                <i class="bi bi-search"></i>
-            </span>
-            <input type="text" id="cardSearch" class="form-control mb-4" placeholder="Search resources...">
-        </div>
-        <hr class="my-4">
-        <!-- OR -->
         <h3 class="fw-bold m-4">Organize by Category</h3>
         <form class="container-fluid">
             <div class="form-check m-3">
@@ -188,14 +179,12 @@
                     Extracurricular <i class="bi bi-scooter"></i>
                 </label>
             </div>
-
             <div class="form-check m-3">
                 <input class="form-check-input pediatric" type="radio" value="" name="category">
                 <label class="form-check-label" for="radioDefault1">
                     Pediatricians <i class="bi bi-capsule"></i>
                 </label>
             </div>
-
             <div class="form-check m-3">
                 <input class="form-check-input transport" type="radio" value="" name="category">
                 <label class="form-check-label" for="radioDefault1">
@@ -219,6 +208,19 @@
 
             <button type="submit" class="btn btn-dark m-3" id="btnSubmit"><i class="bi bi-search"></i> Search</button>
         </form>
+        <hr class="my-5">
+        <!-- OR -->
+
+        <h3 class="m-4 fw-bold">Search Resources</h3>
+        <div class="input-group searchBar">
+            <span class="mb-4 input-group-text" data-bs-toggle="tooltip" data-bs-placement="top"
+                title="Click to search. Results will come up as you type.">
+                <i class="bi bi-search"></i>
+            </span>
+            <input type="text" id="cardSearch" class="form-control mb-4" placeholder="Search resources...">
+        </div>
+
+        <small class="text-danger mx-2">NOTICE: Your search overrides any filter you have set above.</small>
 
         <hr>
 
@@ -227,8 +229,8 @@
             <div class="row">
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded education" style="width: 18rem;">
-                        <img src="https://tse2.mm.bing.net/th/id/OIP.LyRtfRwHykHgCh73MmFV2wHaHY?rs=1&pid=ImgDetMain&o=7&rm=3"
-                            class="card-img-top" alt="gb-HS logo">
+                        <img src="images/resources-page/EducationLogo.png"
+                            class="card-img-top" alt="education logo">
                         <div class="card-body">
                             <h5 class="card-title">Greater Bergen - Head Start</h5>
                             <p class="card-text card-description">Education</p>
@@ -239,8 +241,8 @@
 
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded education" style="width: 18rem;">
-                        <img src="https://sussex.edu/media/10515/eof-logo.jpg" class="card-img-top" alt="eof LOGO">
-                        <div class="card-body">
+                        <img src="images/resources-page/EducationLogo.png"
+                            class="card-img-top" alt="education logo">
                             <h5 class="card-title">Educational Opportunity Fund (EOF)</h5>
                             <p class="card-text card-description">Education</p>
                             <a href="Resource_info/EOF.html" class="btn btn-secondary border-dark">Learn More</a>
@@ -250,8 +252,8 @@
 
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded education" style="width: 18rem;">
-                        <img src="https://cdn.freebiesupply.com/logos/large/2x/rutgers-university-logo-png-transparent.png"
-                            class="card-img-top" alt="...">
+                       <img src="images/resources-page/EducationLogo.png"
+                            class="card-img-top" alt="education logo">
                         <div class="card-body">
                             <h5 class="card-title">Rutgers 4-H Youth Development</h5>
                             <p class="card-text card-description">Education</p>
@@ -263,11 +265,11 @@
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded extracurriculars"
                         style="width: 18rem;">
-                        <img src="https://cdn.freebiesupply.com/logos/large/2x/ymca-3-logo-png-transparent.png"
-                            class="card-img-top" alt="...">
+                        <img src="images/resources-page/extracurricular logo.png"
+                            class="card-img-top" alt="extracurricular logo">
                         <div class="card-body">
                             <h5 class="card-title">YMCA of Greater Bergen County</h5>
-                            <p class="card-text card-description">Recreational and educations well programs for all ages
+                            <p class="card-text card-description">Extracurricular
                             </p>
                             <a href="Resource_info/YMCA.html" class="btn btn-warning border-dark">Learn More</a>
                         </div>
@@ -277,8 +279,8 @@
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded extracurriculars"
                         style="width: 18rem;">
-                        <img src="https://bergen.edu/wp-content/uploads/bergen-logo-RGB.png" class="card-img-top"
-                            alt="...">
+                       <img src="images/resources-page/extracurricular logo.png"
+                            class="card-img-top" alt="extracurricular logo">
                         <div class="card-body">
                             <h5 class="card-title">Bergen Community College - Children's Enrichment</h5>
                             <p class="card-text card-description">Extracurricular</p>
@@ -290,8 +292,8 @@
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded extracurriculars"
                         style="width: 18rem;">
-                        <img src="https://static.wixstatic.com/media/f35efd_deb40de2fc63402aa4c9b195f1257ad0~mv2.jpg/v1/crop/x_0,y_19,w_937,h_429/fill/w_128,h_59,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/YWCA_Alt_persm_rgb.jpg"
-                            class="card-img-top" alt="...">
+                        <img src="images/resources-page/extracurricular logo.png"
+                            class="card-img-top" alt="extracurricular logo">
                         <div class="card-body">
                             <h5 class="card-title">YWCA Northern New Jersey - Bergen After-School
                             </h5>
@@ -303,32 +305,34 @@
 
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded pediatrics" style="width: 18rem;">
-                        <img src="https://tse2.mm.bing.net/th/id/OIP.XEjJMPuBIOizLTdUhR0pcwHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
-                            class="card-img-top" alt="...">
+                        <img src="images/resources-page/pediatrician logo.png"
+                            class="card-img-top" alt="pediatrician logo">
                         <div class="card-body">
                             <h5 class="card-title">Northwest Bergen Health Commission</h5>
                             <p class="card-text card-description">Pediatricians</p>
-                            <a href="Resource_info/northwestbergen.html" class="btn btn-warning border-dark">Learn More</a>
+                            <a href="Resource_info/northwestbergen.html" class="btn btn-warning border-dark">Learn
+                                More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded pediatrics" style="width: 18rem;">
-                        <img src="https://tse4.mm.bing.net/th/id/OIP.5K-L0hf-O6MJeq2LKL6eEwHaCe?rs=1&pid=ImgDetMain&o=7&rm=3"
-                            class="card-img-top" alt="...">
+                        <img src="images/resources-page/pediatrician logo.png"
+                            class="card-img-top" alt="pediatrician logo">
                         <div class="card-body">
                             <h5 class="card-title">Bergen’s Promise (Care Management Organization)</h5>
                             <p class="card-text card-description">Pediatricians</p>
-                            <a href="Resource_info/bergenPromise.html" class="btn btn-secondary border-dark">Learn More</a>
+                            <a href="Resource_info/bergenPromise.html" class="btn btn-secondary border-dark">Learn
+                                More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded pediatrics" style="width: 18rem;">
-                        <img src="https://careplusnj.org/wp-content/uploads/2021/08/care-plus-foundation-logo.png"
-                            class="card-img-top" alt="...">
+                        <img src="images/resources-page/pediatrician logo.png"
+                            class="card-img-top" alt="pediatrician logo">
                         <div class="card-body">
                             <h5 class="card-title">CarePlus NJ (FQHC)</h5>
                             <p class="card-text card-description">Pediatricians</p>
@@ -340,12 +344,13 @@
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-4 bg-body-tertiary rounded transportation"
                         style="width: 18rem;">
-                        <img src="https://bergencountynj.gov/wp-content/uploads/2023/07/bergen-county-seal-hd.png"
-                            class="card-img-top" alt="...">
+                        <img src="images/resources-page/transportation logo.png"
+                            class="card-img-top" alt="transportation logo">
                         <div class="card-body">
                             <h5 class="card-title">Bergen County Division of Community Transportation</h5>
                             <p class="card-text card-description">Transportation</p>
-                            <a href="Resource_info/division_transport.html" class="btn btn-warning border-dark">Learn More</a>
+                            <a href="Resource_info/division_transport.html" class="btn btn-warning border-dark">Learn
+                                More</a>
                         </div>
                     </div>
                 </div>
@@ -353,20 +358,21 @@
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-2 bg-body-tertiary rounded transportation"
                         style="width: 18rem;">
-                        <img src="https://www.fahp.net/assets/images/AssocLogos/Modivcare%202024%20Logo.png"
-                            class="card-img-top" alt="...">
+                        <img src="images/resources-page/transportation logo.png"
+                            class="card-img-top" alt="transportation logo">
                         <div class="card-body">
                             <h5 class="card-title">Modivcare Medical Transportation</h5>
                             <p class="card-text card-description">Transportation</p>
-                            <a href="Resource_info/med_transport.html" class="btn btn-secondary border-dark">Learn More</a>
+                            <a href="Resource_info/med_transport.html" class="btn btn-secondary border-dark">Learn
+                                More</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-2 bg-body-tertiary rounded afterschool" style="width: 18rem;">
-                        <img src="https://media.licdn.com/dms/image/v2/C560BAQGchtQnBYpdUg/company-logo_200_200/company-logo_200_200/0/1630664691655/boys__girls_club_of_lodi__hackensack_logo?e=2147483647&v=beta&t=myyE_gqCZxnCf-9oR3-XLYWW-pko0L6ysKAXCOgFV64"
-                            class="card-img-top" alt="...">
+                        <img src="images/resources-page/afterschoolcare logo.png"
+                            class="card-img-top" alt="afterschool care logo">
                         <div class="card-body">
                             <h5 class="card-title">Boys & Girls Clubs of Lower Bergen County</h5>
                             <p class="card-text card-description">Afterschool Care</p>
@@ -377,8 +383,8 @@
 
                 <div class="col">
                     <div class="card my-4 shadow p-3 mb-2 bg-body-tertiary rounded foodbank" style="width: 18rem;">
-                        <img src="https://tse1.mm.bing.net/th/id/OIP.C-3BAd0Fntbm3E22hGJXaQHaHa?rs=1&pid=ImgDetMain&o=7&rm=3"
-                            class="card-img-top" alt="...">
+                        <img src="images/resources-page/food logo.png"
+                            class="card-img-top" alt="food logo">
                         <div class="card-body">
                             <h5 class="card-title">The Food Brigade (Community FoodBank Trenton)
                             </h5>
@@ -388,7 +394,7 @@
                     </div>
                 </div>
 
-<!-- no extra pages, for display -->
+                <!-- no extra pages, for display -->
                 <nav aria-label="Page navigation example" class="mt-5 mb-4">
                     <ul class="pagination justify-content-center">
                         <li class="page-item disabled">
@@ -432,6 +438,7 @@
 
 
 <script defer>
+
 
     // SEARCH BAR SEARCHING
 
@@ -512,6 +519,18 @@
                 }
             }
 
+        });
+    });
+
+
+    //EXTRA ADD EVENT LISTENER TO GET RID OF THE CHECKS ON SECOND CLICK
+    document.querySelectorAll('input[type="radio"]').forEach(radio => {
+        radio.addEventListener('click', function () {
+            if (this.wasChecked) {
+                this.checked = false;
+            }
+            // save state for next click
+            this.wasChecked = this.checked;
         });
     });
 </script>

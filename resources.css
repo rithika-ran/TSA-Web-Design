@@ -89,7 +89,7 @@ header {
 
 
 #intro_to_page {
-    background-image: url('images/resources-page/bergen-help.png');
+    background-image: url('Images/bergen-help.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -99,6 +99,23 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+/* ANIMATION */
+@keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
 }
 
 #intro {
@@ -115,7 +132,7 @@ header {
 
 .mainResources {
     padding: 60px 0;
-    background-color:aliceblue;
+    background-color: rgb(205, 232, 255);
 }
 
 /* CAROUSEL */
@@ -123,7 +140,7 @@ header {
 .info-image {
     border-radius: 20px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2)
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2)
 }
 
 .info-image:hover {
@@ -138,9 +155,26 @@ header {
 }
 
 /* RESOURCE LIST */
+#resourcelist h1 {
+    padding-top: 40px;
+    transition: 0.4s ease;
+    text-align: center;
+}
+
+#resourcelist h1:hover {
+    cursor: pointer;
+    font-size: 45px;
+    color:rgb(0, 102, 102);
+
+}
+
 .searchBar {
-    max-width: 700px;
-    transform: translateX(25px)
+    max-width: fit-content
+}
+
+/* FORM */
+.form-check-label {
+    font-size: 20px
 }
 
 .card {
@@ -149,7 +183,7 @@ header {
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 20px 20px rgba(0,0,0,0.5)
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5)
 }
 
 .cards-list {
@@ -171,18 +205,17 @@ header {
 }
 
 .footer-bottom a {
-    color:rgb(0, 123, 255);
+    color: rgb(0, 123, 255);
     text-decoration: none;
     transition: 0.2s opacity ease
-
 }
 
 .footer-bottom a:hover {
     opacity: 75%;
-    text-decoration:underline
+    text-decoration: underline
 }
 
-@media (max-width: 760px) {
+@media (max-width: 780px) {
     #intro h1 {
         font-size: 2.5rem;
     }
@@ -199,19 +232,27 @@ header {
     .card-text {
         font-size: 15px;
     }
-    
+
     .cards-list {
-        justify-content: center;        
+        justify-content: center;
     }
 
     .card {
         max-width: 12rem
     }
 
+    #resourcelist h1 {
+        text-align: start;
+    }
+
 }
 
 @media (min-width: 900px) {
     .info-image {
-       transform: scale(0.8)
+        transform: scale(0.8)
+    }
+
+    #intro_to_page {
+        background-attachment: scroll;
     }
 }
